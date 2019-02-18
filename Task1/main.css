@@ -9,7 +9,6 @@
 	  margin: auto;
 text-align: center;
 	z-index: 1;
-/*background-color: rgba(255,255,255,0.5);*/
 	color: white;
 		
 	font-weight: 400;
@@ -33,39 +32,10 @@ text-align: center;
  width:100px;
   height:100px;		 
 }
-/*
-@media screen and (min-width: 1001px) {
-  div.content {
-    font-size: 30px;
-  }
-  div.brand2
-  {
-  	font-size: 100px;
-  }
-  div.brandImage
-  {
-  width:100px;
-  height:100px;	
-  }
+#weOfferText
+{
+	font-size: 25px;
 }
-
-@media screen and (max-width: 1000px) {
-  div.content {
-    font-size: 20px;
-  }
-  p.brand2
-  {
-  	font-size: 60px;
-  }
-   img.brandImage
-  {
-  width:60px;
-  height:60px;	
-  }
-}
-*/
-
-
 @media   (max-width: 600px) and (min-width: 0px) {
   p1.contentText {
     font-size: 10px;
@@ -80,8 +50,30 @@ text-align: center;
   height:40px;	
   }
 }
-
-@media   (max-width: 1000px) and (min-width: 601px) {
+img.garlsImg
+{
+	width: 100%;
+	height: auto;
+}
+#garlands
+{
+background-color: rgba(255,255,255,0.5);
+width:30%;
+	height: auto;
+	margin-left: 15%;
+}
+#edisons
+{
+	background-color: rgba(255,255,255,0.5);
+width:30%;
+	height: auto;
+	float: right;
+	margin-right: 15%;
+}
+#photos
+{
+}
+@media  (max-width: 1000px) and (min-width: 601px) {
   p1.contentText {
     font-size: 20px;
   }
