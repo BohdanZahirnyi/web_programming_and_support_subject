@@ -3,18 +3,10 @@
 {
 	font-size: 25px;
 	font-weight: 800;
-	color: yellow;
+	color: black;
 	margin-left: 30px;
 }
-#backgr {
-  position: fixed;
-  right:0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-z-index: -1;
 
-}
 .navbar
 {
 	
@@ -37,7 +29,12 @@ z-index: -1;
 	background-color: rgba(0,0,0,0);
 	  padding:15px 15px 15px 15px;
 	border-style: none;
-color: rgb(255,255,255);
+color: black;
 	font-size: 15px;
+	 transition: 0.3s;
 	
+}
+.pageBtn:hover {
+  background-color: rgba(0,0,0,0.3);
+  color: white;
 }

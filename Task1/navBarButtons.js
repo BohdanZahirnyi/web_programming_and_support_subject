@@ -2,15 +2,12 @@ function GoToMainP()
 {
 	window.location.href = 'file:///C:/Users/Bodya%20Zahirnuy/Documents/GitHub/web_programming_and_support_subject/Task1/main.html';
 }
-function GoToAboutP()
+function GoToGalleryP()
 {
-	window.location.href = 'file:///C:/Users/Bodya%20Zahirnuy/Documents/GitHub/web_programming_and_support_subject/Task1/about.html';
+	window.location.href = 'file:///C:/Users/Bodya%20Zahirnuy/Documents/GitHub/web_programming_and_support_subject/Task1/gallery.html';
 }
-function lightOn()
+function GoToContactsP()
 {
-document.getElementById("brandImg").src="Light_bulb.png";
+	window.location.href = 'file:///C:/Users/Bodya%20Zahirnuy/Documents/GitHub/web_programming_and_support_subject/Task1/contacts.html';
 }
-function lightOff()
-{
-document.getElementById("brandImg").src="Light_bubl2.png";
-}
+

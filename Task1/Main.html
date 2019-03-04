@@ -14,22 +14,18 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="stylesheet" type="text/css" href="commonStyle.css">
+  <link rel="stylesheet" type="text/css" href="styles\main.css">
+    <link rel="stylesheet" type="text/css" href="styles\commonStyle.css">
   <script src="navBarButtons.js"></script>
+   
 
  </head>
 <body>
-<!-- background video -->
-<video autoplay muted  loop id="backgr">
-	<source src="backgroundMain.mp4" type="video/mp4">
-</video>
 
-
- <nav class="navbar navbar-expand-lg navbar-light bg-dark" onmouseover="lightOn()" onmouseout="lightOff()">
-<a class="navbar-brand" href="#" id="brand" ">
+ <nav class="navbar navbar-expand-lg navbar-light bg-primary" >
+<a class="navbar-brand" href="#" id="brand"	>
    
-   DEC<img src="Light_bubl2.png" width="30" height="30" id="brandImg" class="d-inline-block " >R
+   DEC<img src="img/Light_bulb.png"  width="30" height="30" id="brandImg" class="d-inline-block">R
   </a>  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -39,14 +35,12 @@
       <li class="nav-item">
   <button id="mainP" type="button" class="pageBtn" onclick="GoToMainP()" >Головна</button>     
    </li>
+     
       <li class="nav-item">
-  <button id="aboutP" type="button" class="pageBtn" onclick="GoToAboutP()">Про нас</button>
+  <button id="galleryP" type="button" class="pageBtn" onclick="GoToGalleryP()" >Галерея</button>
       </li>
       <li class="nav-item">
-  <button id="galleryP" type="button" class="pageBtn" >Галерея</button>
-      </li>
-      <li class="nav-item">
-  <button id="contactsP" type="button" class="pageBtn" >Контакти</button>
+  <button id="contactsP" type="button" class="pageBtn" onclick="GoToContactsP()" >Контакти</button>
       </li>
     </ul>
     </div>
@@ -55,22 +49,89 @@
 </nav>
 
 <!-- content -->
-<div  class="container-fluid content">
-	<p class="brand2">DEC<img class="brandImage" src="Light_bulb.png" class="d-inline-block " >R</p><p1 class="contentText">команда креативних людей, яка займається декоративним освітленням будинків <br></p1>
-	
- <div id="photos">
-<div id="edisons">
- <p1 class="contentText">Лампи Едісона</p1>	
- <img src="edisonLights.jpg" class="garlsImg">
+<div  class="container-fluid content ">
+	<div class="row d-flex justify-content-center brand2 qwe"> 
+		<p class="brand2Text" >DEC<img class="brandImage" src="img\Light_bulb.png">R</p>
+</div>
+<div class="row justify-content-center qwe	">
+			<p1 class="contentText">команда креативних людей, яка займається декоративним освітленням будинків</p1>
+		</div>
+ <div id="photos" class="row">
+<div class="col-md overlayHover" id="edisons">
+
+ 
+
+  <div class="overlayImg">
+    <div id="overlayText">Лампи Едісона</div>
+  </div>
+
 	</div>
-	
-	<div id="garlands">
-  <p1 class="contentText">Гірлянди</p1>	
-  <img src="garlands.jpg" class="garlsImg">
+	<div class="col-md overlayHover" id="outLights">
+	<div class="overlayImg">
+    <div id="overlayText">Вуличні лампи</div>
+  </div>
+	</div>	
+
+	<div class="col-md overlayHover" id="garlands">
+ <div class="overlayImg">
+    <div id="overlayText">Гірлянди</div>
+  </div>
+  
 	</div>
 
 		
  </div>
-</div>
+
+	</div>
+
+
+	<!-- Footer -->
+<footer class="page-footer font-small teal pt-4 footer" style="background-color:rgba(255,50,200,0.3);" >
+
+    <!-- Footer Text -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row" >
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase font-weight-bold">Ми - Професіонали!</h5>
+          <p>Усі учасники команди є сертифікованими професіоналами своєї справи. У кожного за плечима мінімум 5 років досвіду декору будинків та фасадів. Тому не хвилюйтесь - ви можете покластись на нас!</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mb-md-0 mb-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase font-weight-bold">Чому ви повинні вибрати саме нас ? </h5>
+          <p>Молоді, перспективні, жартівливі та ще й робимо знижки! Спроектуйте свій власний макет освітлення будинку і отримайте бонус він нас! Доволі прибавабливо, чи не так ?</p>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Text -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="background-color: white;">© 2019 Copyright:
+      <a href="https://Decor.com"> Decor.com</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+<!-- Footer -->
+
 </body>
 </html>

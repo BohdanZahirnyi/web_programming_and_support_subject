@@ -1,0 +1,126 @@
+body
+{
+background-color:white;
+}
+.qwe
+{
+
+}
+.content
+{	
+text-align: center;
+	color: black;
+ background-image:url(../img/blur.jpg);
+  background-size: cover;
+overflow-x: hidden;
+}
+.contentText
+{
+	font-size: 40px;
+}
+
+.brand2Text
+{
+  font-size: 100px;
+  font-weight: 800;
+  color: black; 
+  margin-bottom: 0px;
+}
+.brandImage
+{
+ width:100px;
+  height:100px;		 
+}
+#weOfferText
+{
+	font-size: 25px;
+}
+
+img.garlsImg
+{
+ display: block;
+  width: 100%;
+  height: auto;
+ 
+
+}
+
+.about
+{
+  font-size: 25px;
+ width: 100%;
+ opacity: 0.8;  
+ color:black;
+
+}
+.footer
+{
+  background-color: rgba(255,255,255,0.5);
+}
+
+#overlayText{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+#edisons
+{
+  background-image:url(../img/edisonLights.jpg);
+height:300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#garlands
+{
+  background-image:url(../img/garlands.jpg);
+height:300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+#outLights
+{
+  background-image:url(../img/outLights.jpg);
+height:300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.overlayImg{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: black;
+}
+.overlayHover:hover .overlayImg {
+  opacity: 0.7;
+}
+@media  (max-width: 1000px) and (min-width: 0px) {
+  p1.contentText {
+    font-size: 20px;
+  }
+  p.brand2Text
+  {
+  	font-size: 60px;	
+  }
+   img.brandImage
+  {
+  width:60px;
+  height:60px;	
+  }
+}
+

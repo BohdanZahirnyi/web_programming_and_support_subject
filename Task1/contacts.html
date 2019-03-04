@@ -14,18 +14,18 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="styles\about.css">
+  <link rel="stylesheet" type="text/css" href="styles\main.css">
     <link rel="stylesheet" type="text/css" href="styles\commonStyle.css">
   <script src="navBarButtons.js"></script>
+   
 
  </head>
 <body>
 
-
- <nav class="navbar navbar-expand-lg navbar-light bg-dark" onmouseover="lightOn()" onmouseout="lightOff()">
+ <nav class="navbar navbar-expand-lg navbar-light bg-primary" >
 <a class="navbar-brand" href="#" id="brand"	>
    
-   DEC<img src="img\Light_bubl2.png" width="30" height="30" id="brandImg" class="d-inline-block " >R
+   DEC<img src="img/Light_bulb.png"  width="30" height="30" id="brandImg" class="d-inline-block">R
   </a>  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -35,19 +35,15 @@
       <li class="nav-item">
   <button id="mainP" type="button" class="pageBtn" onclick="GoToMainP()" >Головна</button>     
    </li>
+     
       <li class="nav-item">
-  <button id="aboutP" type="button" class="pageBtn" onclick="GoToAboutP()">Про нас</button>
+  <button id="galleryP" type="button" class="pageBtn" onclick="GoToGalleryP()" >Галерея</button>
       </li>
       <li class="nav-item">
-  <button id="galleryP" type="button" class="pageBtn" >Галерея</button>
-      </li>
-      <li class="nav-item">
-  <button id="contactsP" type="button" class="pageBtn" >Контакти</button>
+  <button id="contactsP" type="button" class="pageBtn" onclick="GoToContactsP()" >Контакти</button>
       </li>
     </ul>
     </div>
     
   </div>
 </nav>
-</body>
-</html>
