@@ -1,0 +1,55 @@
+body
+{
+	background-image:url(../img/blur.jpg);
+  background-size: cover;
+}
+
+.headerText
+{
+	font-size: 50px;
+	font-weight: 500;
+	color:black;
+
+}
+.footerText
+{
+	font-size: 30px;
+	font-weight: 500;
+	color:black;
+	margin-top: 50px;
+margin-bottom: 100px;
+}
+.ourTeam
+{
+	border: solid #000;
+border-radius: 20%;
+max-width: 100%;
+height: auto;
+}
+.ourContacts
+{
+
+	font-size: 40px;
+	font-weight: 500;
+	color:black;
+}
+.colDiv
+{
+	text-align: center;
+
+}
+@media  (max-width: 700px) and (min-width: 0px) {
+
+   p.ourContacts
+  {
+font-size:20px;
+  }
+  .headerText
+  {
+font-size: 40px;
+  }
+  .footerText
+  {
+font-size: 20px;
+  }
+}
