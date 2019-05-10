@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="posts/new">New Article</a>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-preview">
+
+
+              <% @post.each do |post| %>
+              <h4 class="post-title"><%= post.title %></h4>
+              <p class="post-subtitle"><%= post.body%> </p>
+              <%= link_to "Читати далі", post_path(post), :class => 'btn btn-success'%>
+               <%= link_to "Редагувати", edit_post_path(post), :class => 'btn btn-warning'%>
+               <%= link_to "Видалити", post_path(post), method: :delete, data:{confirm:"Видалити статтю ?"}, :class => 'btn btn-danger'%> 
+
+              <br>
+              <% end %>
+
+          <p class="post-meta">Posted by
+            <a href="#">Start Bootstrap</a>
+            on September 24, 2019</p>
+        </div>
+
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
