@@ -12,10 +12,59 @@
   </head>
 
   <body>
-    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" >
+    <img src="https://img.icons8.com/android/32/000000/bebo.png">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+      <a class="nav-item nav-link" href="<%= posts_path %>">Головна сторінка</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-item nav-link" href="<%= new_post_path %>">Нова стаття</a>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <% if user_signed_in? %>
+      <%= link_to "Вихід" , destroy_user_session_path, method: :delete, class: "nav-item nav-link" %>
+      <% else %>
+      <%= link_to "Вхід" , new_user_session_path, class: "nav-item nav-link" %>
+      <%= link_to "Реєстрація" , new_user_registration_path, class: "nav-item nav-link" %>
+      <%end%>
+    </form>
+  </div>
+</nav>
+
+
 
 <div class="container">
     <%= yield %>
     </div>
+
+    <div class="row">
+  <div class="col-xs-10 col-xs-offset-1">
+    <% flash.each do |type, msg| %>
+      <% if type == "notice" %>
+        <div class="alert alert-success">
+      <% elsif type == "alert" %>
+        <div class="alert alert-danger">
+      <% else %>
+        <div class='alert alert-<%= "#{type}" %>'>
+      <% end %>
+      <a href="#" class="close" data-dismiss="alert">&#215;</a>
+      <ul>
+        <li>
+          <%= msg %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</div>
   </body>
 </html>
