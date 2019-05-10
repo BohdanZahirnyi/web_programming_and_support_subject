@@ -5,8 +5,8 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="posts/new">New Article</a>
+      <a class="nav-item nav-link" href="<%= posts_path %>">Головна сторінка</a>
+      <a class="nav-item nav-link" href="<%= new_post_path %>">Нова стаття</a>
     </div>
   </div>
 </nav>
@@ -21,10 +21,10 @@
 
               <% @post.each do |post| %>
               <h4 class="post-title"><%= post.title %></h4>
-              <p class="post-subtitle"><%= post.body%> </p>
+              <p class="post-subtitle"><%= post.short%> </p>
               <%= link_to "Читати далі", post_path(post), :class => 'btn btn-success'%>
                <%= link_to "Редагувати", edit_post_path(post), :class => 'btn btn-warning'%>
-               <%= link_to "Видалити", post_path(post), method: :delete, data:{confirm:"Видалити статтю ?"}, :class => 'btn btn-danger'%> 
+               <%= link_to "Видалити", post_path(post), method: :delete, data:{confirm:"Видалити статтю ?"}, :class => 'btn btn-danger'%>
 
               <br>
               <% end %>
