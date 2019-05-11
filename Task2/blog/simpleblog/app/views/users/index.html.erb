@@ -2,12 +2,12 @@
   <% @users.each do |u| %>
     <li>
       <%= u.email %>
-      <%= button_to 'Delete', admin_destroy_user_path(u), :class => 'btn btn-danger btn-sm', :method => :delete, data: {:confirm => 'Видалити цього користувача ?'} %>
+      <%= button_to 'Видалити аккаунт', admin_destroy_user_path(u), :class => 'btn btn-danger btn-sm', :method => :delete, data: {:confirm => 'Видалити цього користувача ?'} %>
         <% if !u.admin?   %>
-      <%= button_to 'To admin', to_admin_path(u), :class => 'btn btn-success btn-sm', data: {:confirm => 'Зробити адміном цього користувача ?'} %>
+      <%= button_to 'Зробити адміном', to_admin_path(u), :class => 'btn btn-success btn-sm', data: {:confirm => 'Зробити адміном цього користувача ?'} %>
         <% end %>
         <% if u.admin?   %>
-      <%= button_to 'To user', to_admin_path(u), :class => 'btn btn-success btn-sm', data: {:confirm => 'Зробити адміном цього користувача ?'} %>
+      <%= button_to 'Зробити юзером', to_user_path(u), :class => 'btn btn-success btn-sm', data: {:confirm => 'Зробити користувачем цього адміна ?'} %>
         <% end %>
     </li>
   <% end %>

@@ -9,20 +9,21 @@ class UsersController < ApplicationController
    @user.destroy
 
    if @user.destroy
-       redirect_to root_url, notice: "User deleted."
+       redirect_to root_url, notice: "Користувача #{@user.email} видалено"
    end
  end
 
  def to_admin
       @user = User.find(params[:id])
       if @user.update_attribute :admin, true
-          redirect_to root_url, notice: "User set as admin."
+          redirect_to root_url, notice: "Користувач #{@user.email} - тепер адмін"
  end
- def to_admin
+ end
+ def to_user
       @user = User.find(params[:id])
       if @user.update_attribute :admin, false
-          redirect_to root_url, notice: "Admin set as user."
- end
+          redirect_to root_url, notice: "Адмін #{@user.email} тепер користувач"
+
 end
 
 end
