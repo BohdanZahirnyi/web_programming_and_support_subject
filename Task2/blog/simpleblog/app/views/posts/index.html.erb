@@ -11,7 +11,7 @@
               <p class="post-subtitle"><%= post.short%> </p>
               <time style="font-size:13px;"class="post-subtitle"><%= post.created_at.to_date.strftime("%d %B, %Y")%> </time>
               <%= link_to "Читати далі", post_path(post), :class => 'btn btn-success', :style=>'width:100px;height:30px; font-size:12px;'%>
-              <% if user_signed_in? %>
+              <% if (user_signed_in? && post.UserCurrent  == current_user.id.to_s) ||  current_user.try(:admin?)   %>
                <%= link_to "Редагувати", edit_post_path(post), :class => 'btn btn-warning' , :style=>'width:100px;height:30px; font-size:12px;'%>
                <%= link_to "Видалити", post_path(post), method: :delete, data:{confirm:"Видалити статтю ?"}, :class => 'btn btn-danger' , :style=>'width:100px;height:30px; font-size:12px;'%>
                <% end%>

@@ -33,6 +33,7 @@ def destroy
 end
 def create
 @post  = Post.new(post_params)
+@post.UserCurrent=current_user.id
 if(@post.save)
 redirect_to '/posts'
 else
