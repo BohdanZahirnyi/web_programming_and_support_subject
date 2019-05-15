@@ -1,14 +1,18 @@
 <% if current_user.admin? %>
 <ul>
   <% @users.each do |u| %>
-    <li>
+    <% if u != current_user%>
+    <li>  
       <%= u.email %>
+
       <%= button_to 'Видалити аккаунт', admin_destroy_user_path(u), :class => 'btn btn-danger btn-sm', :method => :delete, data: {:confirm => 'Видалити цього користувача ?'} %>
+
         <% if !u.admin?   %>
       <%= button_to 'Зробити адміном', to_admin_path(u), :class => 'btn btn-success btn-sm', data: {:confirm => 'Зробити адміном цього користувача ?'} %>
         <% end %>
         <% if u.admin?   %>
       <%= button_to 'Зробити юзером', to_user_path(u), :class => 'btn btn-success btn-sm', data: {:confirm => 'Зробити користувачем цього адміна ?'} %>
+        <% end %>
         <% end %>
     </li>
   <% end %>

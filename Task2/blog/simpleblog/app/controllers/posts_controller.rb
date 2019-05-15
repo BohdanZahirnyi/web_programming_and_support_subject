@@ -34,6 +34,7 @@ end
 def create
 @post  = Post.new(post_params)
 @post.UserCurrent=current_user.id
+@post.UserCurrentEmail = current_user.email
 if(@post.save)
 redirect_to '/posts'
 else
