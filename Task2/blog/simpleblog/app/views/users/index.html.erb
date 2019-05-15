@@ -2,16 +2,27 @@
 <ul>
   <% @users.each do |u| %>
     <% if u != current_user%>
-    <li>  
+    <li>
       <%= u.email %>
 
       <%= button_to 'Видалити аккаунт', admin_destroy_user_path(u), :class => 'btn btn-danger btn-sm', :method => :delete, data: {:confirm => 'Видалити цього користувача ?'} %>
 
-        <% if !u.admin?   %>
+        <% if !u.admin? && !u.moderator  %>
       <%= button_to 'Зробити адміном', to_admin_path(u), :class => 'btn btn-success btn-sm', data: {:confirm => 'Зробити адміном цього користувача ?'} %>
+<% elsif !u.admin? && u.moderator?   %>
+<%= button_to 'Зробити адміном', to_admin_path(u), :class => 'btn btn-success btn-sm', data: {:confirm => 'Зробити адміном цього модератора ?'} %>
         <% end %>
-        <% if u.admin?   %>
+        
+        <% if u.admin?  %>
       <%= button_to 'Зробити юзером', to_user_path(u), :class => 'btn btn-success btn-sm', data: {:confirm => 'Зробити користувачем цього адміна ?'} %>
+<% elsif u.moderator?  %>
+<%= button_to 'Зробити юзером', to_user_path(u), :class => 'btn btn-success btn-sm', data: {:confirm => 'Зробити користувачем цього модератора ?'} %>
+        <% end %>
+
+        <% if !u.moderator? && !u.admin?  %>
+      <%= button_to 'Зробити модератом', to_moderator_path(u), :class => 'btn btn-warning btn-sm', data: {:confirm => 'Зробити модератором цього користувача ?'} %>
+<% elsif !u.moderator? && u.admin?   %>
+<%= button_to 'Зробити модератом', to_moderator_path(u), :class => 'btn btn-warning btn-sm', data: {:confirm => 'Зробити модератором цього адміна ?'} %>
         <% end %>
         <% end %>
     </li>
