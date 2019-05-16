@@ -2,3 +2,32 @@
 <h1 align="center"><%= @post.title %></h1>
 <br>
 <p style="font-size:20px;"><%= @post.body %></p>
+
+<h4>Коментарі</h4>
+<% @post.comments.each do |comment| %>
+<div class="alert alert-dark">
+  <p><strong><%= comment.UsernameEmail %></strong>: <%= comment.body %></p>
+  <% if comment.UsernameEmail == current_user.try(:email)|| current_user.try(:admin?) || current_user.try(:moderator?) %>
+  <%= link_to "Видалити", post_comment_path(comment), method: :delete, data:{confirm:"Видалити коментар?"}, :class => 'btn btn-danger' , :style=>'width:100px;height:30px; font-size:12px;'%>
+<%end%>
+</div>
+<% end %>
+<%= form_for ([@post, @post.comments.build]) do |f| %>
+<% if @post.errors.any? %>
+<% @post.errors.full_messages.each do |msg| %>
+<div class="alert alert-danger"><%= msg %></div>
+<% end %>
+<% end %>
+<% if signed_in?  %>
+<p>
+    Текст коментаря<br>
+  <%= f.text_area(:body, {:class => 'form-control'}) %>
+</p>
+<p>
+<%= f.submit("Додати коментар", {:class => 'btn btn-success'}) %>
+</p>
+<% end %>
+<% end %>
+
+<%= link_to '<button type="button" class ="btn btn-danger " >В головне меню</button>'.html_safe, posts_path %>
+<p><br></p>

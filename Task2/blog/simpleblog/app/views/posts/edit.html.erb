@@ -1,5 +1,6 @@
 <h2>Редагування статті</h2>
 <%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+<% if @post.UserCurrent == current_user.id.to_s %>
 <% if @post.errors.any? %>
 <% @post.errors.full_messages.each do |msg| %>
 <div class="alert alert-danger"><%= msg %></div>
@@ -18,7 +19,12 @@
   <%= f.text_area(:body, {:class => 'form-control'}) %>
 </p>
 <p>
-<%= f.submit({:class => 'btn btn-success'}) %>
+<%= f.submit("Зберегти зміни",{:class => 'btn btn-success'}) %>
 </p>
+<% else %>
+ <p> У вас немає доступу до цієї сторінки </p>
 <% end %>
 <%= link_to '<button type="button" class ="btn btn-danger ">В головне меню</button>'.html_safe, posts_path %>
+
+
+<% end%>

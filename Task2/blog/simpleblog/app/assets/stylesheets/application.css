@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+ body{
+ background: url('bckgrnd.png') no-repeat center center fixed;
+ background-size: 100%;
+ }
+ 

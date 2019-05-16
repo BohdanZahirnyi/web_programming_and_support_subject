@@ -7,12 +7,14 @@
 
 
               <% @post.each do |post| %>
-              <h4 class="post-title"><%= post.title %></h4>
-              <p class="post-subtitle"><%= post.short%> </p>
+              <h2 class="post-title"><%= post.title %></h2>
+              <h6 class="post-subtitle"><%= post.short%> </h6>
               <time style="font-size:13px;"class="post-subtitle"><%= post.created_at.to_date.strftime("%d %B, %Y")%> </time>
               <%= link_to "Читати далі", post_path(post), :class => 'btn btn-success', :style=>'width:100px;height:30px; font-size:12px;'%>
-              <% if (user_signed_in? && post.UserCurrent  == current_user.id.to_s) ||  current_user.try(:admin?)  ||  current_user.try(:moderator?)   %>
+              <% if (user_signed_in? && post.UserCurrent  == current_user.id.to_s)   %>
                <%= link_to "Редагувати", edit_post_path(post), :class => 'btn btn-warning' , :style=>'width:100px;height:30px; font-size:12px;'%>
+                <% end%>
+               <% if (user_signed_in? && post.UserCurrent  == current_user.id.to_s) ||  current_user.try(:admin?)  ||  current_user.try(:moderator?)   %>
                <%= link_to "Видалити", post_path(post), method: :delete, data:{confirm:"Видалити статтю ?"}, :class => 'btn btn-danger' , :style=>'width:100px;height:30px; font-size:12px;'%>
                <% end%>
                <p class="post-subtitle">posted by <%= post.UserCurrentEmail %> </p>
@@ -24,9 +26,7 @@
         </div>
 
         <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-        </div>
+
       </div>
     </div>
   </div>
