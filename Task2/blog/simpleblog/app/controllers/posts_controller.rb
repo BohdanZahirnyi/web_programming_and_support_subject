@@ -1,9 +1,16 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-
   def index
  @post = Post.all
+
+    if params[:sort]
+       @post = Post.sort(params[:sort])
+end
+  if params[:search]
+     @post = Post.search(params[:search])
   end
+  end
+
 
 def new
 @post = Post.new

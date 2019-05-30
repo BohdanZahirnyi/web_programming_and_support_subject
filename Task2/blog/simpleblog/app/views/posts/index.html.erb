@@ -1,10 +1,22 @@
 
   <!-- Main Content -->
-  <div class="container">
+
+  <%= form_tag(posts_path, :method => "get", id: "search-form", style: "float:right;margin-top:1px;") do %>
+<%= text_field_tag :search, params[:search], placeholder: " Пошук статтей", style: "height:30px;border:solid 1px;border-radius: 10px;" %>
+<%= submit_tag "Шукати",style:"border-radius:10px;border:solid 1px;", :name => nil %>
+<% end %>
+<% if @post.blank? %>
+<h4>Вибачте, але немає статтей з назвою <%= params[:search] %>.</h4>
+<% end %>
+
+  <div class="container" style="width: 100vw;">
+    <%= form_tag(posts_path, :method => "get", id: "sort-form", style: "float:right;margin-top:1px;") do %>
+  <%= submit_tag "Назва", :name => "sort", class: "btn", style: "background-color:white; margin-right:3px;" %>  <% end %>
+  <%= form_tag(posts_path, :method => "get", id: "sort1-form", style: "float:right;margin-top:1px;margin-right:3px;") do %>
+<%= submit_tag "Дата", class: "btn", style: "background-color:white;", :name => "sort" %>  <% end %>
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-preview">
-
 
               <% @post.each do |post| %>
               <h2 class="post-title"><%= post.title %></h2>

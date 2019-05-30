@@ -23,6 +23,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
+
       <a class="nav-item nav-link" href="<%= posts_path %>">Головна сторінка</a>
       </li>
       <li class="nav-item">
@@ -36,16 +37,18 @@
       <li class="nav-item">
         <a class="nav-item nav-link" href="<%= users_path %>">Панель адміна</a>
       </li>
-      <% end %>
 
+      <% end %>
       <% end %>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <% if user_signed_in? %>
       <%= link_to "Вихід" , destroy_user_session_path, method: :delete, class: "nav-item nav-link" %>
       <% else %>
+      <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
       <%= link_to "Вхід" , new_user_session_path, class: "nav-item nav-link" %>
       <%= link_to "Реєстрація" , new_user_registration_path, class: "nav-item nav-link" %>
+
       <%end%>
     </form>
   </div>
