@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   has_many :comments
+  has_many :likes, dependent: :destroy
   validates :title, presence: true, length: { minimum: 5 }
 
   def self.search(search)

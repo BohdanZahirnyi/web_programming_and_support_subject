@@ -2,7 +2,11 @@
 <h1 align="center"><%= @post.title %></h1>
 <br>
 <p style="font-size:20px;"><%= @post.body %></p>
+
 <% if signed_in?  %>
+<%= link_to "Like", post_likes_path(@post), method: :post, :class => 'btn', :style=>'background-color:white;'%>
+
+<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 <!-- Twitter -->
 <a href="http://twitter.com/home?status=SHAREMESSAGE" title="Share on Twitter" target="_blank" class="btn btn-info"><b>Twitter</b></a>
  <!-- Facebook -->
